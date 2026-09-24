@@ -50,6 +50,8 @@ CREATE TABLE servers (
     city                     VARCHAR(50)  NOT NULL,
     endpoint_international   VARCHAR(255) NOT NULL,   -- address used from outside Iran
     endpoint_iran            VARCHAR(255) NOT NULL,   -- address used from inside Iran
+    outline_api_url          VARCHAR(255) DEFAULT NULL, -- Outline management API base URL (NULL for WireGuard-only servers)
+    outline_cert_sha256      VARCHAR(64)  DEFAULT NULL, -- SHA-256 fingerprint of the Outline server's self-signed cert
     wireguard_port           INT NOT NULL DEFAULT 51820,
     max_users                INT NOT NULL DEFAULT 0,
     current_users            INT NOT NULL DEFAULT 0,
